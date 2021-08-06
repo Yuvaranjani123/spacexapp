@@ -28,27 +28,28 @@ jobs:
         
       - name: List all folders
         run: ls -R
-#     - name: Archive the Build Folder i.e public folder
- #       uses: actions/upload-artifacts@v2
-  #      with:
-   #       name: spacexpublicfolder
-    #      path: ./public/
-     #   if: always()
+ 
+      - name: Archive the Build Folder i.e public folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: spacexpublicfolder
+          path: public
+        if: always()
 
- # deployment:
-  #  runs-on: ubuntu-latest
-   # needs: build
-   # steps:
-    #  - name: Download Spacex Application Public Folder
-     #   uses: action/download-artifact@v2
-      #  id: spacexfolderdownload
-      #  with:
-       #   name: spacexpublicfolder
-        #  path: .
+  deployment:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Spacex Application Public Folder
+        uses: actions/download-artifact@v2
+        id: spacexfolderdownload
+        with:
+          name: spacexpublicfolder
+          path: .
 
-   #   - name: Display Structure of downloaded files
-    #    run: ls -R
-     #   working-directory: .
+      - name: Display Structure of downloaded files
+        run: ls -R
+        working-directory: .
 
-    #  - name: Print the Downloaded Path
-     #   run: echo ${{steps.spacexfolderdownload.outputs.download-path}}
+      - name: Print the Downloaded Path
+        run: echo ${{steps.spacexfolderdownload.outputs.download-path}}

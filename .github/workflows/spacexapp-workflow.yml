@@ -56,6 +56,7 @@ jobs:
       
       - name: Install Surge
         run: npm install -g surge
+        
 
       - name: Deploying the Application using Surge
-        run: surge . ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_LOGIN }} --token ${{ secrets.SURGE_TOKEN }}
+        run: surge --add ${{ secrets.SURGE_LOGIN }} . ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_LOGIN }} --token ${{ secrets.SURGE_TOKEN }}

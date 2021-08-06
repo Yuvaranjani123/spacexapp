@@ -26,12 +26,12 @@ jobs:
       - name: Build the Spacex Application using Gatsby
         run: gatsby build
 
-     # - name: Archive the Build Folder i.e public folder
-      #  uses: actions/upload-artifacts@v2
-       # with:
-        #  name: spacexpublicfolder
-         # path: ./public/
-       # if: always()
+      - name: Archive the Build Folder i.e public folder
+        uses: actions/upload-artifacts@v2
+        with:
+          name: spacexpublicfolder
+          path: ./public/
+        if: always()
 
  # deployment:
   #  runs-on: ubuntu-latest

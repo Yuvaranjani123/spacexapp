@@ -62,4 +62,4 @@ jobs:
         run: surge . ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_LOGIN }} --token ${{ secrets.SURGE_TOKEN }}
         
       - name: delete the application
-        run: surge teardown yuva.surge.sh
+        run: surge teardown . ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_LOGIN }} --token ${{ secrets.SURGE_TOKEN }}

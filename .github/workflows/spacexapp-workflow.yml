@@ -14,8 +14,8 @@ jobs:
       - name: Verify the Node.JS Version
         run: node --version
 
-#      - name: Install Gatsby Library
- #       run: npm install -g gatsby-cli
+      - name: Install Gatsby Library
+        run: npm install -g gatsby-cli
 
  #     - name: Checkout the Code
 #        uses: actions/checkout@v2
@@ -44,9 +44,9 @@ jobs:
        #   name: spacexpublicfolder
         #  path: .
 
-      - name: Display Structure of downloaded files
-        run: ls -R
-        working-directory: .
+   #   - name: Display Structure of downloaded files
+    #    run: ls -R
+     #   working-directory: .
 
-      - name: Print the Downloaded Path
-        run: echo ${{steps.spacexfolderdownload.outputs.download-path}}
+    #  - name: Print the Downloaded Path
+     #   run: echo ${{steps.spacexfolderdownload.outputs.download-path}}
